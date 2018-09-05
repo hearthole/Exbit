@@ -89,8 +89,9 @@
 	width:50%;
 	float:right;
 	background-color: grey;
+}
 #test_con2{
-	padding: 20px;
+	padding:20px;
 }
 #test_footer{
 	position:relative;

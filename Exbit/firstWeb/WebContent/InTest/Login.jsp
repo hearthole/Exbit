@@ -16,6 +16,8 @@
 <body>
 	<%
 		if (USERID != "" && USERPW != "" && USERID.equals(USERPW)) {
+			request.getSession(false).setAttribute("USERID",USERID);
+			request.getSession(false).setAttribute("USERNAME","홍길동");
 			response.sendRedirect("my_page.jsp");
 		} else {
 	%>

@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
+<%
+	request.setCharacterEncoding("utf-8");
+
+	String USERID = request.getParameter("USERID");
+	String USERPW = request.getParameter("USERPW");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +13,16 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="../css/InTest.css" type="text/css">
 </head>
+<% 
+	if(USERID==""||USERID==null){
+		%> 
+		<script>
+		alert('로그인이 필요합니다');
+		location.href="login_page.jsp";
+		</script>
+		<%
+	}
+%>
 <body>
 	<div id="test_container">
 		<div id="test_header">

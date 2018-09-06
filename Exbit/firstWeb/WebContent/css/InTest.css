@@ -95,7 +95,9 @@
 }
 
 #test_con1 {
+	width:80%;
 	padding: 20px;
+	margin: 20px auto;
 }
 
 #test_box2 {
@@ -112,4 +114,29 @@
 	position: relative;
 	width:100%;
 	text-align: center;
+}
+#memberPhoto{
+	background-image: url('../img/black.png');
+	background-size:100%;
+	border-radius: 75px;
+	height:150px;
+	width:150px;
+	border: 1px color black;
+	margin: 20px 0;
+}
+#wrongIDPW{
+	display:block;
+	margin:50px auto;
+	background-color: #D8D8D8;
+	width:50%;
+	overflow:hidden;
+	text-align: center;
+	border-radius: 20px;
+}
+#wrongIDPW h2,#wrongIDPW h3{
+	padding: 20px 
+}
+wrongIDPW a{
+	text-decoration: none;
+	color:white;
 }

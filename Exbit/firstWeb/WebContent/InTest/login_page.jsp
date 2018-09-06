@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,14 +18,14 @@
 		</div>
 		<div id="test_wrap">
 			<div id="test_box1">
-				<div id="test_con1">
-					<jsp:include page="joinform.jsp"></jsp:include>
-				</div>
+			<div id="test_con1">
+				<jsp:include page="loginform.jsp"></jsp:include>
+			</div>
 			</div>
 			<div id="test_box2">
-				<div id="test_con2">
-					<jsp:include page="con2.jsp"></jsp:include>
-				</div>
+			<div id="test_con2">
+				<jsp:include page="con2.jsp"></jsp:include>
+			</div>
 			</div>
 		</div>
 		<div id="test_footer">

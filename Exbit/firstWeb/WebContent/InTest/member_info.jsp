@@ -1,4 +1,4 @@
-<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.HashMap"%>
 <%@page import="user.Memberinfo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
@@ -29,27 +29,27 @@
 </style>
 <%
 	request.setCharacterEncoding("utf-8");
-	ArrayList<Memberinfo> member = new ArrayList<Memberinfo>();
+	HashMap<String,Memberinfo> member = new HashMap<String,Memberinfo>();
 
-	if (application.getAttribute("memberlist") != null) {
-		member = (ArrayList<Memberinfo>) (application.getAttribute("memberlist")); //기존 멤버리스트 받아오기
+	if (application.getAttribute("memberMap") != null) {
+		member = (HashMap<String,Memberinfo>)(application.getAttribute("memberMap")); //기존 멤버리스트 받아오기
 	}
 
-	for (Memberinfo mem : member) { //테이블보여주기
+	for(String mem : member.keySet()){ //테이블보여주기
 %>
 <div class="userbox">
 	<div class="userPhoto">
-		<img class="profile" src="../img/<%=mem.getUSERFILE()%>" />
+		<img class="profile" src="../img/<%=member.get(mem).getUSERFILE()%>" />
 	</div>
 	<div class="userInfo">
 		아이디 =
-		<%=mem.getUSERID()%>
+		<%=member.get(mem).getUSERID()%>
 		<br /> 비밀번호 =
-		<%=mem.getUSERPW()%>
+		<%=member.get(mem).getUSERPW()%>
 		<br /> 이름 =
-		<%=mem.getUSERNAME()%>
+		<%=member.get(mem).getUSERNAME()%>
 		<br /> 프로필사진 =
-		<%=mem.getUSERFILE()%>
+		<%=member.get(mem).getUSERFILE()%>
 	</div>
 </div>
 <%

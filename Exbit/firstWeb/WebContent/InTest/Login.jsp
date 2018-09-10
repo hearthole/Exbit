@@ -1,10 +1,16 @@
+<%@page import="java.util.HashMap"%>
+<%@page import="user.Memberinfo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
 <%
 	request.setCharacterEncoding("utf-8");
+	String UID = request.getParameter("USERID");
+	String UPW = request.getParameter("USERPW");
+	HashMap<String, Memberinfo> member = new HashMap<String, Memberinfo>();
 
-	String USERID = request.getParameter("USERID");
-	String USERPW = request.getParameter("USERPW");
+	if (application.getAttribute("memberMap") != null) {
+		member = (HashMap<String, Memberinfo>) (application.getAttribute("memberMap")); //기존 멤버리스트 받아오기
+	}
 %>
 <!DOCTYPE html>
 <html>
@@ -15,12 +21,14 @@
 </head>
 <body>
 	<%
-		if (USERID != "" && USERPW != "" && USERID.equals(USERPW)) {
-			request.getSession(false).setAttribute("USERID",USERID);
-			request.getSession(false).setAttribute("USERNAME","홍길동");
+		for(String mem : member.keySet()){
+		if (mem.equals(UID)&&member.get(mem).getUSERPW().equals(UPW)) {
+			session.setAttribute("USERID", UID);
 			response.sendRedirect("my_page.jsp");
-		} else {
+		}
+		}
 	%>
+</body>
 	<div id="wrongIDPW">
 		<h2>로그인</h2>
 		<hr>
@@ -29,8 +37,4 @@
 			<a href="login_page.jsp" class="btn">다시 로그인하기</a>
 		</h3>
 	</div>
-	<%
-		}
-	%>
-</body>
 </html>

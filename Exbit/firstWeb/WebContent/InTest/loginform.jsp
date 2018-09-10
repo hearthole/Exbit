@@ -1,9 +1,16 @@
+<%@page import="java.util.HashMap"%>
+<%@page import="user.Memberinfo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <script src="https://code.jquery.com/jquery-1.10.0.js"></script>
-<%
-	String id = (String) request.getSession(false).getAttribute("USERID");
-	String name = (String) request.getSession(false).getAttribute("USERNAME");
+<% 
+request.setCharacterEncoding("utf-8");	
+	String UID = (String) request.getSession(false).getAttribute("USERID");
+	HashMap<String, Memberinfo> member = new HashMap<String, Memberinfo>();
+
+	if (application.getAttribute("memberMap") != null) {
+		member = (HashMap<String, Memberinfo>) (application.getAttribute("memberMap")); //기존 멤버리스트 받아오기
+	}
 %>
 <script>
 
@@ -14,10 +21,10 @@
 	});
 	</script>
 <%
-if(id!=null||name!=null){
+if(UID!=null){
 %>
-<%=id%><br>
-<%=name%> 님 환영합니다! <br>
+<%=UID%><br>
+<%=member.get(UID).getUSERNAME()%> 님 환영합니다! <br>
 	<a href="#" role="button" class="btn" id="logout2">로그아웃</a>
 <%
 	} else {

@@ -6,6 +6,9 @@ public class Memberinfo {
 	private String USERNAME;
 	private String USERFILE;
 	
+	public Memberinfo(){
+	}
+	
 	@Override
 	public String toString() {
 		return "Memberinfo [USERID=" + USERID + ", USERPW=" + USERPW + ", USERNAME=" + USERNAME + ", USERFILE="

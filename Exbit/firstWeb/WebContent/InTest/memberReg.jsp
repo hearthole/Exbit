@@ -3,28 +3,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
 <jsp:useBean id="User" class="user.Memberinfo" scope="page"></jsp:useBean>
+<jsp:useBean id="members" class="java.util.HashMap" scope="application"></jsp:useBean>
 <jsp:setProperty property="*" name="User" />
 <%
 	request.setCharacterEncoding("utf-8");
-	HashMap<String,Memberinfo> member = new HashMap<String,Memberinfo>();
-	
-	if(application.getAttribute("memberMap")!=null){
-	member = (HashMap<String,Memberinfo>)(application.getAttribute("memberMap")); //기존 멤버리스트 받아오기
-	}
-	
-	member.put(User.getUSERID(),User); //만들어진 객체 멤버리스트에 추가
-	
-	
-		for(String mem : member.keySet()){
-	%>
-		아이디 = <%=member.get(mem).getUSERID()%>
-		<br> 비밀번호 = <%=member.get(mem).getUSERPW()%>
-		<br> 이름 = <%=member.get(mem).getUSERNAME()%>
-		<br> 프로필이미지 = <%=member.get(mem).getUSERFILE()%><hr>
-	<%
-    }
-	
-	application.setAttribute("memberMap", member);	//멤버리스트 새값으로변경
+	members.put(User.getUSERID(),User);
 	response.sendRedirect("member_page.jsp");
-	%>
+%>
 

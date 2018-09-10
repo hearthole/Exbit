@@ -29,13 +29,9 @@
 </style>
 <%
 	request.setCharacterEncoding("utf-8");
-	HashMap<String,Memberinfo> member = new HashMap<String,Memberinfo>();
-
-	if (application.getAttribute("memberMap") != null) {
-		member = (HashMap<String,Memberinfo>)(application.getAttribute("memberMap")); //기존 멤버리스트 받아오기
-	}
-
-	for(String mem : member.keySet()){ //테이블보여주기
+	HashMap<String,Memberinfo> member = (HashMap<String,Memberinfo>)application.getAttribute("members");
+	if(member!=null){
+		for(String mem : member.keySet()){ //테이블보여주기
 %>
 <div class="userbox">
 	<div class="userPhoto">
@@ -53,5 +49,6 @@
 	</div>
 </div>
 <%
+		}
 	}
 %>

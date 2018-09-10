@@ -28,6 +28,11 @@
 	text-decoration: none;
 }
 
+.btn:hover{
+	cursor: pointer;
+	background-color: #fff;
+}
+
 #test_header #hh {
 	text-align: center;
 }
@@ -52,6 +57,8 @@
 #USERSUB {
 	text-align: center;
 }
+
+
 
 #test_navi {
 	margin: 15px 0 5px 0;
@@ -140,4 +147,26 @@
 	text-decoration: none;
 	color:white;
 }
+.userPhoto {
+	display: inline-block;
+	float: left;
+	margin-right: 20px;
+}
 
+.userPhoto .profile {
+	height: 80px;
+	width: 80px;
+}
+
+.userInfo {
+	display: inline-block;
+}
+
+.userbox {
+	width: 100%;
+	position: relative;
+	display: inline-block;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid grey;
+}

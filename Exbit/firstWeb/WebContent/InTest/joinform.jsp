@@ -21,7 +21,7 @@
 			</tr>
 			<tr>
 				<td colspan="2" style="text-align: center;"><input type="submit" 
-				 class="btn" id="USERSUB" name="USERSUB"></td>
+				 class="btn" id="USERSUB" name="USERSUB" value="회원가입"></td>
 			</tr>
 		</table>
 	</form>

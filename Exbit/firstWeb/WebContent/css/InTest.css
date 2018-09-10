@@ -136,7 +136,8 @@
 #wrongIDPW h2,#wrongIDPW h3{
 	padding: 20px 
 }
-wrongIDPW a{
+#wrongIDPW a{
 	text-decoration: none;
 	color:white;
 }
+

@@ -19,7 +19,7 @@
 		<div id="test_wrap">
 			<div id="test_box1">
 				<div id="test_con1">
-					<jsp:include page="memberReg.jsp"></jsp:include>
+					<jsp:include page="member_info.jsp"></jsp:include>
 				</div>
 			</div>
 			<div id="test_box2">

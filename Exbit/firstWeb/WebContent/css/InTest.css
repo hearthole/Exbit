@@ -30,7 +30,6 @@
 
 .btn:hover{
 	cursor: pointer;
-	background-color: #fff;
 }
 
 #test_header #hh {
@@ -41,6 +40,12 @@
 	height: 15px;
 	width: 200px;
 	padding: 5px;
+	margin-bottom: 5px;
+}
+
+.loginLa{
+	font-size: 12px;
+	color:red;
 	margin-bottom: 5px;
 }
 
@@ -147,6 +152,30 @@
 	text-decoration: none;
 	color:white;
 }
+.userPhoto {
+	display: inline-block;
+	float: left;
+	margin-right: 20px;
+}
+
+.userPhoto .profile {
+	height: 80px;
+	width: 80px;
+}
+
+.userInfo {
+	display: inline-block;
+}
+
+.userbox {
+	width: 100%;
+	position: relative;
+	display: inline-block;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid grey;
+}
+
 .userPhoto {
 	display: inline-block;
 	float: left;

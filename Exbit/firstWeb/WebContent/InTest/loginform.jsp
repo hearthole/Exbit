@@ -8,22 +8,48 @@
 			location.href="logout.jsp";
 		});
 
-        if(getCookie('crememId')!=""){
+        if(getCookie('crememId')!=""){ // 로딩완료시 쿠키체크
             $('#rememId').prop('checked',true);
             $('#USERID').val(getCookie('crememId'));
         }
         
-        $('#USERSUB').click(function(){
+        $('#USERSUB').click(function(){ //submit
+            loSubmit();
+        });
+	});
+    
+    function loSubmit(){
+        var labId = document.getElementById('labelId');
+            var labPw = document.getElementById('labelPw');
             
-            if($('#rememId').prop('checked')){
+            if($('#rememId').prop('checked')){ //ID저장 쿠키적용
                 setCookie("crememId",$('#USERID').val(),"1");
             }else{
                 setCookie("crememId","","0");
             }
+        	if($('#USERID').val()==""){
+                labId.textContent="아이디를 입력해주세요.";
+        		return false;
+        	}else{
+                labId.textContent="";
+            }
+        	
+        	if(!(/^[0-9a-zA-Z@.-_]{5,20}$/.test($('#USERID').val()))){
+                labId.textContent="아이디는 5~20자의 영문 숫자 또는 이메일형식만 가능합니다.";
+        		return false;
+        	}else{
+                labId.textContent="";
+            }
+        	
+        	if($('#USERPW').val()==""){
+                labPw.textContent="비밀번호를 입력해주세요.";
+        		return false;
+        	}else{
+                labPw.textContent="";
+            }
+        
             $('#USERJOIN')[0].submit();
-            
-        });
-	});
+    }
     
     function setCookie(cname, cvalue, exdays) {
     var d = new Date();
@@ -74,9 +100,17 @@ ${loginfo.USERNAME} 님 환영합니다! <br>
 					name="USERID"></td>
 			</tr>
 			<tr>
+				<td></td>
+				<td><label for="USERID" class="loginLa" ID="labelId"></label></td>
+			</tr>
+			<tr>
 				<td><label for="USERPW">비밀번호</label></td>
 				<td><input type="password" class="input_login" id="USERPW"
 					name="USERPW"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><label for="USERID" class="loginLa" ID="labelPw"></label></td>
 			</tr>
 			<tr>
 				<td colspan="2" style="text-align: center;">

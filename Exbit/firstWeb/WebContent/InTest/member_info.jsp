@@ -2,28 +2,43 @@
 <%@page import="user.Memberinfo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<script src="https://code.jquery.com/jquery-1.10.0.js"></script>
+<script>
+	$(document).ready(function(){
+		
+	});
+	
+	function deleteM(key) {
+		location.href="btnAction.jsp?dkey="+key;
+	}
+</script>
 <%
 	request.setCharacterEncoding("utf-8");
-	HashMap<String,Memberinfo> member = (HashMap<String,Memberinfo>)application.getAttribute("members");
-	if(member!=null){
-		for(String mem : member.keySet()){ //테이블보여주기
 %>
-<div class="userbox">
-	<div class="userPhoto">
-		<img class="profile" src="../img/<%=member.get(mem).getUSERFILE()%>" />
-	</div>
-	<div class="userInfo">
-		아이디 =
-		<%=member.get(mem).getUSERID()%>
-		<br /> 비밀번호 =
-		<%=member.get(mem).getUSERPW()%>
-		<br /> 이름 =
-		<%=member.get(mem).getUSERNAME()%>
-		<br /> 프로필사진 =
-		<%=member.get(mem).getUSERFILE()%>
-	</div>
-</div>
-<%
-		}
-	}
-%>
+<c:choose>
+	<c:when test="${members!=null}">
+		<c:forEach var="i" items="${members}">
+			<div class="userbox">
+				<div class="userPhoto">
+					<img class="profile" src="../img/${i.value.USERFILE}" />
+				</div>
+				<div class="userInfo">
+					<p>아이디 = ${i.value.USERID}</p>
+					<p>비밀번호 = ${i.value.USERPW}</p>
+					<p>이름 = ${i.value.USERNAME}</p>
+					<p>프로필사진 = ${i.value.USERFILE}</p>
+				</div>
+				<div class="userModi">
+					<a href="modify_page.jsp?mkey=${i.key}" role="button"
+						class="btn modibtn" id="modifybtn">수정</a> <br> <a href="#"
+						role="button" class="btn modibtn" id="deletebtn"
+						onclick="deleteM('${i.key}')">삭제</a>
+				</div>
+			</div>
+		</c:forEach>
+	</c:when>
+	<c:otherwise>
+		<h1>회원목록이 없습니다.</h1>
+	</c:otherwise>
+</c:choose>

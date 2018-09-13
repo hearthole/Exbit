@@ -40,17 +40,16 @@
 	height: 15px;
 	width: 200px;
 	padding: 5px;
-	margin-bottom: 5px;
 }
 
 .loginLa{
 	font-size: 12px;
 	color:red;
-	margin-bottom: 5px;
 }
 
-#USERJOIN {
-	
+#USERJOIN td{
+	max-width:214px;
+	padding-bottom: 5px;
 }
 
 #USERFILE {
@@ -63,18 +62,12 @@
 	text-align: center;
 }
 
-
-
 #test_navi {
 	margin: 15px 0 5px 0;
 	height: 30px;
 	text-align: center;
 	overflow: hidden;
 	border-bottom: 3px solid red;
-}
-
-#test_navi ul {
-	
 }
 
 #test_navi ul li {
@@ -107,8 +100,8 @@
 }
 
 #test_con1 {
-	width:80%;
-	padding: 20px;
+	width:95%;
+	padding: 10px;
 	margin: 20px auto;
 }
 
@@ -153,18 +146,24 @@
 	color:white;
 }
 .userPhoto {
-	display: inline-block;
-	float: left;
-	margin-right: 20px;
+	float:left;
+	width:20%;
 }
 
-.userPhoto .profile {
+.userbox .profile {
 	height: 80px;
 	width: 80px;
 }
 
 .userInfo {
-	display: inline-block;
+	float:left;
+	width: 50%;
+}
+
+.userModi{
+	float:left;
+	vertical-align: middle;
+	height: auto;
 }
 
 .userbox {
@@ -175,27 +174,17 @@
 	padding-bottom: 20px;
 	border-bottom: 1px solid grey;
 }
-
-.userPhoto {
-	display: inline-block;
-	float: left;
-	margin-right: 20px;
+.userbox td{
+	padding-right: 10px;
+}
+.userbox td .modibtn{
+	margin:5px 0px;
 }
 
-.userPhoto .profile {
-	height: 80px;
-	width: 80px;
+.readOnly{
+	background-color: #f2f4f7;
 }
 
-.userInfo {
-	display: inline-block;
-}
-
-.userbox {
-	width: 100%;
-	position: relative;
-	display: inline-block;
-	padding-top: 20px;
-	padding-bottom: 20px;
-	border-bottom: 1px solid grey;
+.mlistbox{
+	
 }

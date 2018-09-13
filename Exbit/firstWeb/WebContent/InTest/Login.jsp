@@ -10,7 +10,7 @@
 	pageContext.setAttribute("UID", request.getParameter("USERID"));
 	pageContext.setAttribute("UPW", request.getParameter("USERPW"));
 %>
-
+	
 	<c:choose>
 		<c:when test="${members!=null}">
 			<c:forEach var="mem" items="${members}">
@@ -21,16 +21,14 @@
 				<script>location.href="my_page.jsp";</script>
 				</c:if>
 			</c:forEach>
-				<c:redirect url="login_page.jsp">
-				<c:param name="id" value="${param.USERID}"/>
-				<c:param name="msg" value="아이디와 비밀번호를 확인해 주세요."/>
-				</c:redirect>
+				<c:set value="아이디와 비밀번호를 확인해 주세요." target="${loginfo}" property="logmsg"/>
+				<c:set value="${UID}" target="${loginfo}" property="logid"/>
+				<c:redirect url="login_page.jsp"/>
 		</c:when>
 		<c:otherwise>
-			<c:redirect url="login_page.jsp">
-			<c:param name="id" value="${param.USERID}"/>
-			<c:param name="msg" value="아이디와 비밀번호를 확인해 주세요."/>
-			</c:redirect>
+			<c:set value="아이디와 비밀번호를 확인해 주세요." target="${loginfo}" property="logmsg"/>
+			<c:set value="${UID}" target="${loginfo}" property="logid"/>
+			<c:redirect url="login_page.jsp"/>
 		</c:otherwise>
 	</c:choose>
 

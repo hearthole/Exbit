@@ -4,16 +4,23 @@ public class Logininfo {
 	private String USERID;
 	private String USERNAME;
 	private String USERFILE;
+	private String logmsg;
+	private String logid;
 	
 	public Logininfo() {
 		
 	}
 	
-	public Logininfo(String uSERID, String uSERNAME, String uSERFILE) {
+	
+	public Logininfo(String uSERID, String uSERNAME, String uSERFILE, String logmsg, String logid) {
 		USERID = uSERID;
 		USERNAME = uSERNAME;
 		USERFILE = uSERFILE;
+		this.logmsg = logmsg;
+		this.logid = logid;
 	}
+
+
 
 	public String getUSERID() {
 		return USERID;
@@ -39,6 +46,20 @@ public class Logininfo {
 		USERFILE = uSERFILE;
 	}
 	
-	
+	public String getLogmsg() {
+		return logmsg;
+	}
+
+	public void setLogmsg(String logmsg) {
+		this.logmsg = logmsg;
+	}
+
+	public String getLogid() {
+		return logid;
+	}
+
+	public void setLogid(String logid) {
+		this.logid = logid;
+	}
 	
 }

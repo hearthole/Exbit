@@ -96,11 +96,11 @@
 					<tr>
 						<td><label for="USERID">아이디</label></td>
 						<td><input type="text" class="input_login" id="USERID"
-							name="USERID" value="${param.id}"></td>
+							name="USERID" value="${loginfo.logid}"></td>
 					</tr>
 					<tr>
 						<td></td>
-						<td><label for="USERID" class="loginLa" ID="labelId">${param.msg}</label></td>
+						<td><label for="USERID" class="loginLa" ID="labelId"></label></td>
 					</tr>
 					<tr>
 						<td><label for="USERPW">비밀번호</label></td>
@@ -109,7 +109,7 @@
 					</tr>
 					<tr>
 						<td></td>
-						<td><label for="USERID" class="loginLa" ID="labelPw"></label></td>
+						<td><label for="USERID" class="loginLa" ID="labelPw">${loginfo.logmsg}</label></td>
 					</tr>
 					<tr>
 						<td colspan="2" style="text-align: center;"><input
@@ -125,5 +125,9 @@
 				</table>
 			</form>
 		</div>
+		<c:if test="${loginfo.logid!=null}">
+		<c:set value="" target="${loginfo}" property="logmsg"/>
+		<c:set value="" target="${loginfo}" property="logid"/>
+		</c:if>
 	</c:otherwise>
 </c:choose>

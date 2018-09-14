@@ -6,9 +6,6 @@
 
 <script>
 	$(document).ready(function(){
-		$('#logout').click(function(){
-			location.href="logout.jsp";
-		});	
 	});
 	</script>
 	
@@ -17,7 +14,7 @@
 		<c:when test="${loginfo.USERID==null}">
 		<script>
 		alert('로그인이 필요합니다');
-		location.href="login_page.jsp";
+		location.href="../view/login_page.jsp";
 		</script>
 		</c:when>
 		<c:otherwise>

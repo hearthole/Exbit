@@ -6,13 +6,13 @@
 	
 	if (logout!=null) {
 		request.getSession(false).invalidate();
-		response.sendRedirect("Main.jsp");
+		response.sendRedirect("../view/Main.jsp");
 	}
 
 	String dkey = (String)request.getParameter("dkey");
 	if (dkey!=null) {
 		HashMap mem = (HashMap)application.getAttribute("members");
 		mem.remove(dkey);
-		response.sendRedirect("member_page.jsp");
+		response.sendRedirect("../view/member_page.jsp");
 	}
 %>

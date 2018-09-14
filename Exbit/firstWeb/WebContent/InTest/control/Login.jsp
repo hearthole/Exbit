@@ -18,17 +18,17 @@
 				<c:set value="${mem.value.USERID}" target="${loginfo}" property="USERID"/>
 				<c:set value="${mem.value.USERNAME}" target="${loginfo}" property="USERNAME"/>
 				<c:set value="${mem.value.USERFILE}" target="${loginfo}" property="USERFILE"/>
-				<script>location.href="my_page.jsp";</script>
+				<script>location.href="../view/my_page.jsp";</script>
 				</c:if>
 			</c:forEach>
 				<c:set value="아이디와 비밀번호를 확인해 주세요." target="${loginfo}" property="logmsg"/>
 				<c:set value="${UID}" target="${loginfo}" property="logid"/>
-				<c:redirect url="login_page.jsp"/>
+				<c:redirect url="../view/login_page.jsp"/>
 		</c:when>
 		<c:otherwise>
 			<c:set value="아이디와 비밀번호를 확인해 주세요." target="${loginfo}" property="logmsg"/>
 			<c:set value="${UID}" target="${loginfo}" property="logid"/>
-			<c:redirect url="login_page.jsp"/>
+			<c:redirect url="../view/login_page.jsp"/>
 		</c:otherwise>
 	</c:choose>
 

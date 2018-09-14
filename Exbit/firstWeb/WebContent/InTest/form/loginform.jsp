@@ -6,7 +6,7 @@
 <script>
 	$(document).ready(function() {
 		$('#logout2').click(function() {
-			location.href = "btnAction.jsp?logout=true";
+			location.href = "../control/btnAction.jsp?logout=true";
 		});
 
 		if (getCookie('crememId') != "") { // 로딩완료시 쿠키체크
@@ -91,7 +91,7 @@
 	</c:when>
 	<c:otherwise>
 		<div>
-			<form id="USERJOIN" action="Login.jsp" method="post">
+			<form id="USERJOIN" action="../control/Login.jsp" method="post">
 				<table>
 					<tr>
 						<td><label for="USERID">아이디</label></td>

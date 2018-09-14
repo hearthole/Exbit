@@ -10,7 +10,7 @@
 	});
 	
 	function deleteM(key) {
-		location.href="btnAction.jsp?dkey="+key;
+		location.href="../control/btnAction.jsp?dkey="+key;
 	}
 </script>
 <%
@@ -30,7 +30,7 @@
 					<p>프로필사진 = ${i.value.USERFILE}</p>
 				</div>
 				<div class="userModi">
-					<a href="modify_page.jsp?mkey=${i.key}" role="button"
+					<a href="../view/modify_page.jsp?mkey=${i.key}" role="button"
 						class="btn modibtn" id="modifybtn">수정</a> <br> <a href="#"
 						role="button" class="btn modibtn" id="deletebtn"
 						onclick="deleteM('${i.key}')">삭제</a>

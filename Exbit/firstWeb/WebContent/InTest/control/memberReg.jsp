@@ -8,6 +8,6 @@
 <%
 	request.setCharacterEncoding("utf-8");
 	members.put(User.getUSERID(),User);
-	response.sendRedirect("member_page.jsp");
+	response.sendRedirect("../view/member_page.jsp");
 %>
 

@@ -9,6 +9,7 @@
 	request.setCharacterEncoding("utf-8");
 	pageContext.setAttribute("UID", request.getParameter("USERID"));
 	pageContext.setAttribute("UPW", request.getParameter("USERPW"));
+	
 %>
 	
 	<c:choose>

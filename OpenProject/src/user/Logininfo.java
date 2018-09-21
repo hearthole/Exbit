@@ -4,6 +4,7 @@ public class Logininfo {
 	private String USERID;
 	private String USERNAME;
 	private String USERFILE;
+	private String REGDATE;
 	private String logmsg;
 	private String logid;
 	
@@ -12,10 +13,11 @@ public class Logininfo {
 	}
 	
 	
-	public Logininfo(String uSERID, String uSERNAME, String uSERFILE, String logmsg, String logid) {
+	public Logininfo(String uSERID, String uSERNAME, String uSERFILE, String rEGDATE , String logmsg, String logid) {
 		USERID = uSERID;
 		USERNAME = uSERNAME;
 		USERFILE = uSERFILE;
+		REGDATE = rEGDATE;
 		this.logmsg = logmsg;
 		this.logid = logid;
 	}
@@ -46,6 +48,14 @@ public class Logininfo {
 		USERFILE = uSERFILE;
 	}
 	
+	public String getREGDATE() {
+		return REGDATE;
+	}
+
+	public void setREGDATE(String rEGDATE) {
+		REGDATE = rEGDATE;
+	}
+
 	public String getLogmsg() {
 		return logmsg;
 	}

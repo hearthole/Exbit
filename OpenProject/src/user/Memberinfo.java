@@ -5,6 +5,7 @@ public class Memberinfo {
 	private String USERPW;
 	private String USERNAME;
 	private String USERFILE;
+	private String REGDATE;
 	
 	public Memberinfo(){
 	}
@@ -12,9 +13,9 @@ public class Memberinfo {
 	@Override
 	public String toString() {
 		return "Memberinfo [USERID=" + USERID + ", USERPW=" + USERPW + ", USERNAME=" + USERNAME + ", USERFILE="
-				+ USERFILE + "]";
+				+ USERFILE + ", REGDATE=" + REGDATE + "]";
 	}
-	
+
 	public String getUSERID() {
 		return USERID;
 	}
@@ -39,4 +40,12 @@ public class Memberinfo {
 	public void setUSERFILE(String uSERFILE) {
 		USERFILE = uSERFILE;
 	}
+	public String getREGDATE() {
+		return REGDATE;
+	}
+	public void setREGDATE(String rEGDATE) {
+		REGDATE = rEGDATE;
+	}
+	
+	
 }

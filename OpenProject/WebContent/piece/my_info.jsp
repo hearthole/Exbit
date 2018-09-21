@@ -9,7 +9,9 @@
 	});
 	</script>
 	
-<% request.setCharacterEncoding("utf-8");%>
+<% 
+	request.setCharacterEncoding("utf-8");
+%>
 	<c:choose>
 		<c:when test="${loginfo.USERID==null}">
 		<script>
@@ -26,6 +28,7 @@
 				<p>아이디 = ${loginfo.USERID}</p>
 				<p>이름 = ${loginfo.USERNAME}</p>
 				<p>프로필사진 = ${loginfo.USERFILE}</p>
+				<p>가입일 = ${loginfo.REGDATE}</p>
 			</div>
 		</div>
 		</c:otherwise>

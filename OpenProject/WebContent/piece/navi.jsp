@@ -17,6 +17,7 @@
 			<li><a href="../view/login_page.jsp" class="navi_btn">로그인</a></li>
 			<li><a href="../view/my_page.jsp" class="navi_btn">마이페이지</a></li>
 			<li><a href="../view/member_page.jsp" class="navi_btn">회원리스트</a></li>
+			<li><a href="../view/guestMs_page.jsp" class="navi_btn">방명록</a></li>
 		</ul>
 	</div>
 </body>

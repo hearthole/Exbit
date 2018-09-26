@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class Dao {
 	Connection conn;
-	Dao() {
+	public Dao() {
 		if (conn == null) {
 			try {
 				// 드라이버로딩
@@ -18,11 +18,11 @@ public class Dao {
 		}
 	}
 
-	Dao(Connection conn) {
+	public Dao(Connection conn) {
 		
 	}// end dao(conn)
 
-	void rollback() {
+	public void rollback() {
 		if (conn != null) {
 			try {
 				conn.rollback();
@@ -32,7 +32,7 @@ public class Dao {
 		}
 	}
 
-	void close(AutoCloseable... acs) {
+	public void close(AutoCloseable... acs) {
 		try {
 			for (AutoCloseable ac : acs) {
 				if (ac != null)

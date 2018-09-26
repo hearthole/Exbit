@@ -20,9 +20,10 @@ public class MemDAO extends Dao {
 
 	public List<Memberinfo> selectAllUsers() {
 		ResultSet rs = null;
+		Statement stmt = null;
 		try {
 			String sql = "select * from MEMBER"; // sql 쿼리
-			Statement stmt = conn.createStatement();
+			stmt = conn.createStatement();
 			List<Memberinfo> li = new ArrayList<Memberinfo>(); // 임시리스트 생성
 			rs = stmt.executeQuery(sql);
 			while (rs.next()) {
@@ -41,22 +42,21 @@ public class MemDAO extends Dao {
 			System.out.println("레코드 선택에 실패했습니다.");
 			return null;
 		} finally { // 쿼리가 성공 또는 실패에 상관없이 사용한 자원을 해제 한다. (순서중요)
-			if (rs != null)
-				try {
-					rs.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				} // result 객체 해제
+			if (rs != null || stmt != null) {
+				close();
+			}
+				
 		}
 
 	}// end selectAllusers()
 
 	public Memberinfo selectUser(String userId) {
 		ResultSet rs = null;
+		Statement stmt =null;
 		Memberinfo sel = new Memberinfo();
 		try {
 			String sql = "select * from MEMBER where USERID='"+userId+"'"; // sql 쿼리
-			Statement stmt = conn.createStatement(); // stament 생성
+			stmt = conn.createStatement(); // stament 생성
 			rs = stmt.executeQuery(sql);
 			if (rs.next()) {
 				sel.setUSERID(rs.getString(2));
@@ -72,11 +72,10 @@ public class MemDAO extends Dao {
 			System.out.println("레코드 선택에 실패했습니다.");
 			return null;
 		} finally { // 쿼리가 성공 또는 실패에 상관없이 사용한 자원을 해제 한다. (순서중요)
-			if (rs != null)
-				try {
-					rs.close();
-				} catch (SQLException e) {
-				} // result 객체 해제
+			if (rs != null || stmt != null) {
+					close();
+			}
+				
 		}
 	}// end selectUser()
 
@@ -96,11 +95,9 @@ public class MemDAO extends Dao {
 			return -1;
 		} finally { // 쿼리가 성공 또는 실패에 상관없이 사용한 자원을 해제 한다. (순서중요)
 
-			if (pstmt != null)
-				try {
-					pstmt.close();
-				} catch (SQLException sqle) {
-				} // PreparedStatement 객체 해제
+			if (pstmt != null){
+				close();
+			}
 		}
 	}// end deleteUser
 
@@ -108,7 +105,7 @@ public class MemDAO extends Dao {
 		PreparedStatement pstmt = null;
 		try {
 			int ucnt = 0;
-			String sql = "update MEMBER set USERID=?,USERPW=?,USERNAME=?,USERFILE=?,REGDATE=sysdate where USERID=?"; // sql쿼리
+			String sql = "update MEMBER set USERID=?,USERPW=?,USERNAME=?,USERFILE=? where USERID=?"; // sql쿼리
 			pstmt = conn.prepareStatement(sql); // prepareStatement에서 해당 sql을 미리 컴파일한다.
 			pstmt.setString(1, up.getUSERID()); // 해당 아이디의 행을 변경하는것이다.
 			pstmt.setString(2, up.getUSERPW()); // pstmt의 각 요소마다 up객체의 값 대입
@@ -123,12 +120,9 @@ public class MemDAO extends Dao {
 			System.out.println("레코드 변경에 실패했습니다.");
 			return -1;
 		} finally { // 쿼리가 성공 또는 실패에 상관없이 사용한 자원을 해제 한다. (순서중요)
-
-			if (pstmt != null)
-				try {
-					pstmt.close();
-				} catch (SQLException sqle) {
-				} // PreparedStatement 객체 해제
+			if (pstmt != null){
+				close();
+			}
 		}
 
 	}// end updateUser
@@ -151,11 +145,9 @@ public class MemDAO extends Dao {
 			System.out.println("member 테이블에 새로운 레코드 추가에 실패했습니다.");
 			return -1;
 		} finally { // 쿼리가 성공 또는 실패에 상관없이 사용한 자원을 해제 한다. (순서중요)
-			if (pstmt != null)
-				try {
-					pstmt.close();
-				} catch (SQLException sqle) {
-				} // PreparedStatement 객체 해제
+			if (pstmt != null){
+				close();
+			}
 		}
 
 	}

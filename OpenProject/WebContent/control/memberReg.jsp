@@ -8,8 +8,7 @@
 	
 	MemDAO mem = MemDAO.getInstance();
 	request.setCharacterEncoding("utf-8");
-	String up = request.getParameter("mkey");
-	if(up!=null){
+	if(request.getParameter("mkey")!=null){
 	mem.updateUser(User);	
 	}else{
 	mem.insertUser(User);

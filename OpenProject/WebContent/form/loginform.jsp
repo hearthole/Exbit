@@ -8,7 +8,6 @@
 		$('#logout2').click(function() {
 			location.href = "../control/btnAction.jsp?logout=true";
 		});
-
 		if (getCookie('crememId') != "") { // 로딩완료시 쿠키체크
 			$('#rememId').prop('checked', true);
 			$('#USERID').val(getCookie('crememId'));
@@ -81,7 +80,9 @@
 <%
 	request.setCharacterEncoding("utf-8");
 %>
-
+<c:if test="${msg!=null}">
+	<script>alert(${msg});</script>
+</c:if>
 <c:choose>
 	<c:when test="${loginfo.USERID!=null}">
 		<p>${loginfo.USERID}</p>

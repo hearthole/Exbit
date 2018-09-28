@@ -25,7 +25,7 @@
 		<c:forEach var="i" items="${members}">
 			<div class="userbox">
 				<div class="userPhoto">
-					<img class="profile" src="../img/${i.USERFILE}" />
+					<img class="profile" alt="경로이상" src="${i.USERFILE}" />
 				</div>
 				<div class="userInfo">
 					<p>아이디 = ${i.USERID}</p>

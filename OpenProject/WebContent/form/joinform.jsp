@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 
 <div>
-	<form id="USERJOIN" action="../control/memberReg.jsp" method="post">
+	<form id="USERJOIN" action="../control/memberReg.jsp" method="post" enctype="multipart/form-data">
 		<table>
 			<tr>
 				<td><label for="USERID">아이디</label></td>

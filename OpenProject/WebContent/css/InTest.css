@@ -148,6 +148,7 @@
 .userPhoto {
 	float:left;
 	width:20%;
+	text-align: center;
 }
 
 .userbox .profile {
@@ -174,10 +175,10 @@
 	padding-bottom: 20px;
 	border-bottom: 1px solid grey;
 }
-.userbox td{
-	padding-right: 10px;
+.userbox div{
+	padding-right: 5px;
 }
-.userbox td .modibtn{
+.userbox div .modibtn{
 	margin:5px 0px;
 }
 
@@ -186,5 +187,28 @@
 }
 
 .mlistbox{
+	
+}
+
+.validform{
+	color:green;
+	font-size:12px;
+}
+.invalidform{
+	color:red;
+	font-size:12px;
+}
+
+#viewType{
+	float:right;
+	overflow: hidden;
+	height:20px;
+}
+
+.memHeader{
+	height: 30px;
+	text-align: right;	
+}
+.memList{
 	
 }

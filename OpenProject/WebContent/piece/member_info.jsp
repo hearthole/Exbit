@@ -19,14 +19,19 @@
 				    },
 					success : function(data) {
 						$('.memList').empty();
-						$('.memList').append($.trim(data));
+						$('.memList').append(data);
 					}
 				});
 			}
 			if ($(this).val() == 'JSON') {
 				$.getJSON('../control/viewTypeJSON.jsp', function(data) {
-					success : $.each(data, function(key, value) {
+					success : 
 						$('.memList').empty();
+						$('.memList').append(JSON.stringify(data)+"<hr>");
+						$.each(data, function(key, value) {
+						$('.memList').append("아이디:"+value.USERID+"<br>"+"비밀번호:"+value.USERPW+"<br>"
+								+"이름:"+value.USERNAME+"<br>"+"파일명:"+value.USERFILE+"<br>"
+								+"가입일:"+value.REGDATE+"<hr>");
 					});
 
 				});
@@ -39,12 +44,14 @@
 				    },
 					success : function(data) {
 						$('.memList').empty();
-						$('.memList').append($('data'));
-						$(data).find('members').each(function(){
-							var member = $(this).find('member').text();
-							var htmlstr = '<h1>'+ member +'</h1>'
+						$('.memList').append($(data).text()+'<hr>');
+						$(data).find('members').find('member').each(function(){
+							var htmlstr = '아이디:'+$(this).find('USERID').text()+'<br>'
+							+'비밀번호:'+$(this).find('USERPW').text()+'<br>'
+							+'이름:'+$(this).find('USERNAME').text()+'<br>'
+							+'파일:'+$(this).find('USERFILE').text()+'<br>'
+							+'가입일'+$(this).find('REGDATE').text()+'<hr>';
 							$('.memList').append(htmlstr);
-							
 						});	
 					}
 				});

@@ -11,10 +11,6 @@
 	List<Memberinfo> memb = (List<Memberinfo>)mb.selectAllUsers();
 	request.setAttribute("members", memb);
 %>
-
-
-<c:choose>
-	<c:when test="${param.viewType=='HTML'}">
 		<c:choose>
 			<c:when test="${members!=null}">
 				<c:forEach var="i" items="${members}">
@@ -42,12 +38,3 @@
 				<h1>회원목록이 없습니다.</h1>
 			</c:otherwise>
 		</c:choose>
-	</c:when>
-	<c:when test="${param.viewType=='JSON'}">
-	</c:when>
-	<c:when test="${param.viewType=='XML'}">
-	</c:when>
-	<c:otherwise>
-
-	</c:otherwise>
-</c:choose>

@@ -66,7 +66,7 @@
 
 <div class="memHeader">
 	<select name="viewType" id="viewType">
-		<option value="" selected disabled hidden>viewType</option>
+		<option value="" selected disabled hidden="hidden">viewType</option>
 		<option value="HTML">HTML</option>
 		<option value="JSON">JSON</option>
 		<option value="XML">XML</option>

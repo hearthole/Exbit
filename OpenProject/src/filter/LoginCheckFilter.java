@@ -27,13 +27,12 @@ public class LoginCheckFilter implements Filter {
 		boolean login = false;
 		if(session!=null) {
 			Logininfo info = (Logininfo) session.getAttribute("loginfo");
-			if(info!=null) {
+			if(info!=null&&info.getUSERID()!=null) {
 				System.out.println(info.getUSERID());
 				login=true;
 			}
 		}
 		if(login) {
-			System.out.println("2");
 			chain.doFilter(request, response);
 		}else {
 			request.setAttribute("msg", "'로그인해주세요!'");

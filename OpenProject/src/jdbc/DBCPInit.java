@@ -41,9 +41,9 @@ public class DBCPInit extends HttpServlet {
 
 	private void initConnectionPool() {
 
-		String url = "jdbc:oracle:thin:@localhost:1521:orcl";
-		String user = "OPENPROJECT";
-		String pw = "1234";
+		String url = "jdbc:oracle:thin:@open-oracle.cci86sr6hobq.ap-northeast-2.rds.amazonaws.com:1521:orcl";
+		String user = "bit";
+		String pw = "bitcamp1234";
 
 		try {
 			ConnectionFactory connFactory = new DriverManagerConnectionFactory(url, user, pw);

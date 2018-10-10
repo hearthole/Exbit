@@ -14,16 +14,11 @@
 <c:if test="${members!=null}">
 [
 <c:forEach var="i" items="${members}" varStatus="status">
-<c:choose>
-<c:when test="${status.last==false}">
-{"USERID":"${i.USERID}","USERPW":"${i.USERPW}",
-"USERNAME":"${i.USERNAME}","USERFILE":"${i.USERFILE}","REGDATE":"${i.REGDATE}"},
-</c:when>
-<c:otherwise>
 {"USERID":"${i.USERID}","USERPW":"${i.USERPW}",
 "USERNAME":"${i.USERNAME}","USERFILE":"${i.USERFILE}","REGDATE":"${i.REGDATE}"}
-</c:otherwise>
-</c:choose>
+<c:if test="${status.last==false}">
+,
+</c:if>
 </c:forEach>
 ]
 </c:if>
